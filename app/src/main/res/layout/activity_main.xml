@@ -1,0 +1,33 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/myConstraintLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/black">
+        <com.longdo.mjpegviewer.MjpegView android:id="@+id/mjpegview" android:layout_width="0dp" android:layout_height="0dp" android:layout_marginRight="240dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintDimensionRatio="H,3:4" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="1.0" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.0"/>
+        <com.example.ugv2.JoystickView android:id="@+id/rightJoyStick" android:layout_width="240dp" android:layout_height="240dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+        <Button android:id="@+id/menuButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30dp" android:text="MENU" android:background="@android:color/transparent" android:fontFamily="@font/vcr_osd_mono" app:layout_constraintStart_toStartOf="@+id/mjpegview" app:layout_constraintTop_toTopOf="@+id/mjpegview" android:gravity="left" android:textColor="#00FF00"/>
+
+        <Button
+            android:id="@+id/autoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/vcr_osd_mono"
+            android:gravity="left"
+            android:text="AUTO"
+            android:textColor="#00FF00"
+            app:layout_constraintStart_toStartOf="@+id/mjpegview"
+            app:layout_constraintTop_toBottomOf="@id/menuButton" />
+        <Button android:id="@+id/slamButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SLAM" android:fontFamily="@font/vcr_osd_mono" android:background="@android:color/transparent" app:layout_constraintStart_toStartOf="@+id/mjpegview" app:layout_constraintTop_toBottomOf="@+id/autoButton" android:gravity="left" android:textColor="#00FF00"/>
+        <Button android:id="@+id/trtButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TRT" android:fontFamily="@font/vcr_osd_mono" android:background="@android:color/transparent" app:layout_constraintStart_toStartOf="@+id/mjpegview" app:layout_constraintTop_toBottomOf="@+id/slamButton" android:gravity="left" android:textColor="#00FF00"/>
+        <Button android:id="@+id/saButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SA" android:fontFamily="@font/vcr_osd_mono" android:background="@android:color/transparent" android:textColor="#00FF00" app:layout_constraintStart_toStartOf="@+id/mjpegview" app:layout_constraintTop_toBottomOf="@+id/trtButton" android:gravity="left"/>
+        <Button android:id="@+id/spatialButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@android:color/transparent" android:text="3D" android:fontFamily="@font/vcr_osd_mono" android:gravity="left" app:layout_constraintStart_toStartOf="@+id/mjpegview" app:layout_constraintTop_toBottomOf="@+id/saButton" android:textColor="#00FF00"/>
+        <Button android:id="@+id/videoMode" android:layout_marginTop="30dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@android:color/transparent" android:text="Button" app:layout_constraintEnd_toEndOf="@+id/mjpegview" app:layout_constraintTop_toTopOf="parent" android:textColor="#00FF00" android:gravity="right" android:fontFamily="@font/vcr_osd_mono"/>
+        <TextView android:id="@+id/textIPView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="76dp" android:layout_marginEnd="84dp" android:background="@android:color/transparent" android:fontFamily="@font/vcr_osd_mono" android:text="TextView" android:textColor="#00FF00" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+        <TextView android:id="@+id/networkErrorText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="48dp" android:layout_marginEnd="152dp" android:background="@android:color/transparent" android:fontFamily="@font/vcr_osd_mono" android:text="TextView" android:textColor="#00FF00" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/textIPView"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--
+    <com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:theme="@style/Theme.UGV2.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" android:background="?attr/colorPrimary" app:popupTheme="@style/Theme.UGV2.PopupOverlay"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    -->
+
+    <include layout="@layout/content_main"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
